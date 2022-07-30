@@ -1,0 +1,120 @@
+name:                ToyLang
+version:             0.1.0.0
+github:              madorama/ToyLang
+license:             BSD3
+author:              madorama
+copyright:           2022 madorama
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/ToyLang#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- unordered-containers
+- megaparsec
+- parser-combinators
+- mtl
+- utf8-string
+- bytestring
+- text
+- pretty-simple
+- prettyprinter
+- directory
+- time
+- lens
+- ansi-terminal
+- formatting
+
+ghc-options:
+- -Wall
+- -Werror=incomplete-record-updates
+- -Werror=incomplete-patterns
+- -Werror=incomplete-uni-patterns
+- -Werror=partial-fields
+- -Werror=identities
+- -Werror=monomorphism-restriction
+- -Wno-type-defaults
+- -Wcompat
+
+default-extensions:
+- BangPatterns
+- BinaryLiterals
+- ConstrainedClassMethods
+- ConstraintKinds
+- DataKinds
+- DefaultSignatures
+- DeriveDataTypeable
+- DeriveFoldable
+- DeriveFunctor
+- DeriveGeneric
+- DeriveLift
+- DeriveTraversable
+- DoAndIfThenElse
+- DuplicateRecordFields
+- EmptyCase
+- EmptyDataDeriving
+- ExistentialQuantification
+- ExplicitForAll
+- FlexibleContexts
+- FlexibleInstances
+- FunctionalDependencies
+- GADTSyntax
+- GeneralizedNewtypeDeriving
+- HexFloatLiterals
+- ImportQualifiedPost
+- InstanceSigs
+- KindSignatures
+- LambdaCase
+- MultiParamTypeClasses
+- MultiWayIf
+- NamedFieldPuns
+- NamedWildCards
+- NumericUnderscores
+- OverloadedLabels
+- OverloadedStrings
+- PartialTypeSignatures
+- PatternSynonyms
+- PolyKinds
+- PostfixOperators
+- RankNTypes
+- RecordWildCards
+- ScopedTypeVariables
+- StandaloneDeriving
+- StandaloneKindSignatures
+- Strict
+- StrictData
+- TupleSections
+- TypeApplications
+- TypeFamilies
+- TypeOperators
+- TypeSynonymInstances
+- ViewPatterns
+
+library:
+  source-dirs: src
+
+executables:
+  ToyJs-exe:
+    main:                Main.hs
+    source-dirs:         app
+
+    dependencies:
+    - ToyLang
+    - optparse-applicative
+
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+

@@ -1,0 +1,195 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           ToyLang
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/ToyJs#readme>
+homepage:       https://github.com/madorama/ToyLang#readme
+bug-reports:    https://github.com/madorama/ToyLang/issues
+author:         madorama
+maintainer:     madorama
+copyright:      2022 madorama
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/madorama/ToyLang
+
+library
+  exposed-modules:
+      Js.CodeGen
+      Js.Syntax
+      Madlib.Megaparsec.Language
+      Madlib.Megaparsec.Parser
+      Madlib.Megaparsec.Token
+      Madlib.Operator
+      Madlib.Pretty
+      ToyLang.Compile
+      ToyLang.Parser
+      ToyLang.Syntax
+      ToyLang.Token
+  other-modules:
+      Paths_ToyLang
+  hs-source-dirs:
+      src
+  default-extensions:
+      BangPatterns
+      BinaryLiterals
+      ConstrainedClassMethods
+      ConstraintKinds
+      DataKinds
+      DefaultSignatures
+      DeriveDataTypeable
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DoAndIfThenElse
+      DuplicateRecordFields
+      EmptyCase
+      EmptyDataDeriving
+      ExistentialQuantification
+      ExplicitForAll
+      FlexibleContexts
+      FlexibleInstances
+      FunctionalDependencies
+      GADTSyntax
+      GeneralizedNewtypeDeriving
+      HexFloatLiterals
+      ImportQualifiedPost
+      InstanceSigs
+      KindSignatures
+      LambdaCase
+      MultiParamTypeClasses
+      MultiWayIf
+      NamedFieldPuns
+      NamedWildCards
+      NumericUnderscores
+      OverloadedLabels
+      OverloadedStrings
+      PartialTypeSignatures
+      PatternSynonyms
+      PolyKinds
+      PostfixOperators
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+      StandaloneDeriving
+      StandaloneKindSignatures
+      Strict
+      StrictData
+      TupleSections
+      TypeApplications
+      TypeFamilies
+      TypeOperators
+      TypeSynonymInstances
+      ViewPatterns
+  ghc-options: -Wall -Werror=incomplete-record-updates -Werror=incomplete-patterns -Werror=incomplete-uni-patterns -Werror=partial-fields -Werror=identities -Werror=monomorphism-restriction -Wno-type-defaults -Wcompat
+  build-depends:
+      ansi-terminal
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , formatting
+    , lens
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , pretty-simple
+    , prettyprinter
+    , text
+    , time
+    , unordered-containers
+    , utf8-string
+  default-language: Haskell2010
+
+executable ToyJs-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_ToyLang
+  hs-source-dirs:
+      app
+  default-extensions:
+      BangPatterns
+      BinaryLiterals
+      ConstrainedClassMethods
+      ConstraintKinds
+      DataKinds
+      DefaultSignatures
+      DeriveDataTypeable
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DoAndIfThenElse
+      DuplicateRecordFields
+      EmptyCase
+      EmptyDataDeriving
+      ExistentialQuantification
+      ExplicitForAll
+      FlexibleContexts
+      FlexibleInstances
+      FunctionalDependencies
+      GADTSyntax
+      GeneralizedNewtypeDeriving
+      HexFloatLiterals
+      ImportQualifiedPost
+      InstanceSigs
+      KindSignatures
+      LambdaCase
+      MultiParamTypeClasses
+      MultiWayIf
+      NamedFieldPuns
+      NamedWildCards
+      NumericUnderscores
+      OverloadedLabels
+      OverloadedStrings
+      PartialTypeSignatures
+      PatternSynonyms
+      PolyKinds
+      PostfixOperators
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+      StandaloneDeriving
+      StandaloneKindSignatures
+      Strict
+      StrictData
+      TupleSections
+      TypeApplications
+      TypeFamilies
+      TypeOperators
+      TypeSynonymInstances
+      ViewPatterns
+  ghc-options: -Wall -Werror=incomplete-record-updates -Werror=incomplete-patterns -Werror=incomplete-uni-patterns -Werror=partial-fields -Werror=identities -Werror=monomorphism-restriction -Wno-type-defaults -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ToyJs
+    , ansi-terminal
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , formatting
+    , lens
+    , megaparsec
+    , mtl
+    , optparse-applicative
+    , parser-combinators
+    , pretty-simple
+    , prettyprinter
+    , text
+    , time
+    , unordered-containers
+    , utf8-string
+  default-language: Haskell2010
