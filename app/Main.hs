@@ -5,7 +5,7 @@ module Main where
 import qualified Data.Text.IO              as TIO
 import qualified Data.Version              as V
 import qualified Options.Applicative       as Opt
-import           Paths_ToyJs
+import           Paths_ToyLang
 import           System.Console.ANSI
 import           System.Directory
 import           System.IO
@@ -21,7 +21,7 @@ data Options = Options
 showVersion :: V.Version -> String
 showVersion v =
   unwords
-    [ "ToyJs"
+    [ "ToyLang"
     , "version"
     , "-"
     , V.showVersion v
@@ -45,7 +45,7 @@ options = do
   Opt.infoOption (showVersion version) $
     Opt.short 'v'
     <> Opt.long "version"
-    <> Opt.help "Show ToyJs version"
+    <> Opt.help "Show ToyLang version"
 
   pure Options {..}
 
@@ -53,7 +53,7 @@ parserInfo :: Opt.ParserInfo Options
 parserInfo =
   Opt.info options $
     Opt.fullDesc
-    <> Opt.progDesc "ToyJs is compiler."
+    <> Opt.progDesc "ToyLang is compiler."
 
 main :: IO ()
 main = do

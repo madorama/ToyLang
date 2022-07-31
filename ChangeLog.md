@@ -1,4 +1,4 @@
-# Changelog for ToyJs
+# Changelog for ToyLang
 
 ## Unreleased changes
-
+
