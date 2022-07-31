@@ -10,7 +10,7 @@ import qualified Js.CodeGen      as Js
 import qualified Js.Syntax       as Js
 
 import qualified ToyLang.Parser  as Parser
-import           ToyLang.Syntax
+import ToyLang.Syntax
 
 mkBuiltinName :: Text -> Text
 mkBuiltinName name =
@@ -22,8 +22,13 @@ return_ =
 
 builtinFunctions :: [Js.Ast]
 builtinFunctions =
-  [ builtinRightPipe
+  [ builtinUnit
+  , builtinRightPipe
   ]
+
+builtinUnit :: Js.Ast
+builtinUnit =
+  declFun "unit" [] (Js.AReturn $ Just $ Js.EList []);
 
 builtinRightPipe :: Js.Ast
 builtinRightPipe =
@@ -37,7 +42,7 @@ call name = \case
   p:ps ->
     Js.AExpr $
       foldr
-        (\x acc -> Js.ECall (Js.EIdent x) [acc] )
+        (\x acc -> Js.ECall (Js.EIdent x) [acc])
         (Js.ECall (Js.EIdent name) [Js.EIdent p])
         ps
 
